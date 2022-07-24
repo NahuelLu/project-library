@@ -9,8 +9,54 @@ body{
 }
 main{
     flex: 1 1 auto;
+    display: flex;
 }
 footer{
     text-align: center;
     background: gray;
+}
+.form-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: rgb(73, 66, 66);
+    padding: 10px;
+}
+#form-book{
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+#form-book div{
+    display: flex;
+}
+#form-book div label{
+    flex: 1 1 auto;
+}
+.display-books{
+    flex:1 1 auto;
+    background:rgb(220, 195, 195);
+    padding:10px;
+    /*For cards*/
+    display: flex;
+    gap: 10px 10px;
+    flex-wrap: wrap;
+}
+.card{
+    width: 200px;
+    height: 200px;
+    border: 1px solid red;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    background: wheat;
+    box-shadow: 2px 3px;
+    font-family: Georgia;
+}
+.card .data{
+    flex:1 1 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
