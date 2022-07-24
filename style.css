@@ -34,7 +34,7 @@ footer{
 #form-book div label{
     flex: 1 1 auto;
 }
-.display-books{
+.display-books-ctn{
     flex:1 1 auto;
     background:rgb(220, 195, 195);
     padding:10px;
