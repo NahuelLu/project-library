@@ -1,3 +1,5 @@
+"use strict";
+
 //Constructors
 function Book(title,author,pages,read){
     this.title=title;
@@ -5,6 +7,7 @@ function Book(title,author,pages,read){
     this.pages=pages;
     this.read=read;
 }
+
 //Definitions
 let myBooks=[];
 
@@ -14,7 +17,8 @@ const inputPages = document.querySelector("#pages");
 const inputRead = document.querySelector("#read");
 const submitButton = document.querySelector("#form-button");
 const showBooksButton = document.querySelector("#display-books-btn");
-const divBooks = document.querySelector(".display-books-ctn")
+const divBooks = document.querySelector(".display-books-ctn");
+
 //Functions
 function addBookToLibrary(){ 
     let title = inputTitle.value;
@@ -33,8 +37,17 @@ function createCard(book){
     let card = document.createElement("div");
     divBooks.appendChild(card);
     card.className="card";
+    createButtonOn(card);
     createDivsForBookInsideOf(card,book);
 }
+function createButtonOn(card){
+    let btn=document.createElement("button");
+    card.appendChild(btn);
+    btn.className= "remove-btn";
+    btn.textContent="REMOVE";
+    btn.addEventListener("click",()=>{card.remove()});
+}
+
 function createDivsForBookInsideOf(parent,book){
     let titleDiv= document.createElement("div");
     let authorDiv = document.createElement("div");
@@ -53,7 +66,8 @@ function createDivsForBookInsideOf(parent,book){
     pagesDiv.textContent=book.pages;
     readDiv.textContent=book.read;
 }
+
 //Event listeners
+
 submitButton.addEventListener("click",addBookToLibrary);
 showBooksButton.addEventListener("click",displayBooks);
-
